@@ -15,7 +15,7 @@ function setStatus(message, state = "") {
 
 const requiredConfig = ["apiKey", "authDomain", "projectId", "appId"];
 if (!requiredConfig.every((key) => firebaseConfig[key]?.trim())) {
-  setStatus("The note box is waiting on its Firebase setup.");
+  setStatus("Contact form unavailable until Firebase is configured.");
 } else {
   try {
     const [{ initializeApp }, { addDoc, collection, getFirestore, serverTimestamp }] =
@@ -37,7 +37,7 @@ if (!requiredConfig.every((key) => firebaseConfig[key]?.trim())) {
 
     const db = getFirestore(app);
     submitButton.disabled = false;
-    setStatus("Your message goes straight to Tully.");
+    setStatus("Send a message to TullyG.");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -46,13 +46,13 @@ if (!requiredConfig.every((key) => firebaseConfig[key]?.trim())) {
       const message = form.elements.message.value.trim();
       const email = form.elements.email.value.trim();
       if (!message) {
-        setStatus("Please add a message before sending.", "error");
+        setStatus("Please enter a message before sending.", "error");
         form.elements.message.focus();
         return;
       }
 
       submitButton.disabled = true;
-      setStatus("Sending your note...");
+      setStatus("Sending message...");
 
       try {
         await addDoc(collection(db, "messages"), {
@@ -61,16 +61,16 @@ if (!requiredConfig.every((key) => firebaseConfig[key]?.trim())) {
           createdAt: serverTimestamp(),
         });
         form.reset();
-        setStatus("Thanks for writing. Your note is on its way.", "success");
+        setStatus("Message sent.", "success");
       } catch (error) {
         console.error("Could not send the Firebase message.", error);
-        setStatus("Your note couldn’t be sent. Please try again in a bit.", "error");
+        setStatus("Message could not be sent. Please try again.", "error");
       } finally {
         submitButton.disabled = false;
       }
     });
   } catch (error) {
     console.error("Could not initialize Firebase for the message form.", error);
-    setStatus("The note box couldn’t connect. Please try again later.", "error");
+    setStatus("Could not connect to the contact form. Please try again later.", "error");
   }
 }
