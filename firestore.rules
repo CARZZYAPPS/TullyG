@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /messages/{messageId} {
+      allow create: if request.resource.data.keys().hasAll(['message', 'email', 'createdAt'])
+        && request.resource.data.keys().hasOnly(['message', 'email', 'createdAt'])
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 1000
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 254
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+  }
+}
