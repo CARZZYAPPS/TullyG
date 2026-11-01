@@ -1,4 +1,4 @@
-import { firebaseConfig } from "./firebase-config.js";
+import { firebaseConfig } from "./firebase-config.js?v=1";
 
 const form = document.querySelector("#note-form");
 const submitButton = document.querySelector("#submit-note");
