@@ -9,13 +9,26 @@
       content="Music and updates from TullyG, an independent Jewish rapper."
     >
     <title>TullyG — music</title>
-    <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link
+      rel="icon"
+      href="https://image-cdn-fa.spotifycdn.com/image/ab676161000051747edab2b294eb66e8ef7ae5a9"
+      type="image/jpeg"
+    >
+    <link rel="stylesheet" href="styles.css?v=4">
     <script type="module" src="script.js?v=3"></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="wordmark" href="#home" aria-label="TullyG home">Tully<span>G</span></a>
+      <a class="brand-link" href="#home" aria-label="TullyG home">
+        <img
+          class="brand-avatar"
+          src="https://image-cdn-fa.spotifycdn.com/image/ab676161000051747edab2b294eb66e8ef7ae5a9"
+          alt=""
+          width="42"
+          height="42"
+        >
+        <span class="wordmark">Tully<span>G</span></span>
+      </a>
       <nav aria-label="Main navigation">
         <a href="#music">Music</a>
         <a href="#about">About</a>
@@ -34,15 +47,15 @@
           <a class="text-link" href="#music">Listen to the music <span aria-hidden="true">↓</span></a>
         </div>
 
-        <div class="hero-art" aria-label="TullyG artist graphic">
-          <div class="record-art">
-            <span class="record-monogram">TG</span>
-            <span class="record-wave" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </span>
-            <span class="record-caption">TullyG</span>
-          </div>
+        <div class="hero-art">
+          <img
+            class="hero-portrait"
+            src="https://image-cdn-fa.spotifycdn.com/image/ab676161000051747edab2b294eb66e8ef7ae5a9"
+            alt="TullyG"
+            width="268"
+            height="320"
+            fetchpriority="high"
+          >
         </div>
       </section>
 
@@ -74,6 +87,39 @@
             <a href="https://soundcloud.com/search?q=TullyG" target="_blank" rel="noopener noreferrer">SoundCloud <span aria-hidden="true">↗</span></a>
             <a href="https://tidal.com/search?q=TullyG" target="_blank" rel="noopener noreferrer">Tidal <span aria-hidden="true">↗</span></a>
           </div>
+          <article class="album-feature" aria-labelledby="album-title">
+            <p class="eyebrow album-label">Debut album</p>
+            <div class="album-heading">
+              <div>
+                <h3 id="album-title">Journey To Identity</h3>
+                <p class="album-description">
+                  A 12-track story told through themes: ambition, pressure,
+                  identity, setbacks, and finding a way forward. Each track
+                  leads into the next.
+                </p>
+              </div>
+              <a
+                class="spotify-link album-link"
+                href="https://open.spotify.com/search/Journey%20To%20Identity%20TullyG"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Find the album <span aria-hidden="true">↗</span></a>
+            </div>
+            <ol class="album-tracklist">
+              <li><span>Dreamer</span><span>Ambition</span></li>
+              <li><span>Running Out of Time</span><span>Urgency</span></li>
+              <li><span>Performance</span><span>Persona</span></li>
+              <li><span>House of Mirrors</span><span>Identity</span></li>
+              <li><span>Reality</span><span>Perspective</span></li>
+              <li><span>Mistakes</span><span>Reflection</span></li>
+              <li><span>Scars</span><span>Consequences</span></li>
+              <li><span>Faded</span><span>Distance</span></li>
+              <li><span>Nightmare</span><span>Low point</span></li>
+              <li><span>Smoke</span><span>Finding hope</span></li>
+              <li><span>Spirituality</span><span>Meaning</span></li>
+              <li><span>Alter Egos</span><span>Uncertainty</span></li>
+            </ol>
+          </article>
         </div>
       </section>
 
@@ -84,8 +130,9 @@
         </div>
         <div class="about-copy">
           <p>
-            I’m TullyG, an independent Jewish rapper. My music draws on my
-            perspective and experiences. Follow along for new music and updates.
+            I started writing lyrics in second grade. After years of writing
+            and practice, I released my debut album, <em>Journey To Identity</em>:
+            a connected story about ambition, identity, mistakes, and what comes next.
           </p>
         </div>
       </section>
@@ -127,7 +174,16 @@
     </main>
 
     <footer class="site-footer">
-      <a class="wordmark footer-wordmark" href="#home">Tully<span>G</span></a>
+      <a class="brand-link footer-brand" href="#home" aria-label="TullyG home">
+        <img
+          class="brand-avatar"
+          src="https://image-cdn-fa.spotifycdn.com/image/ab676161000051747edab2b294eb66e8ef7ae5a9"
+          alt=""
+          width="36"
+          height="36"
+        >
+        <span class="wordmark">Tully<span>G</span></span>
+      </a>
       <p>© 2026 STP | TullyG</p>
       <a class="back-to-top" href="#home">Back to top ↑</a>
     </footer>

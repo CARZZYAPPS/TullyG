@@ -3,6 +3,10 @@
 A low-key, static artist site for TullyG, published with GitHub Pages. The
 optional message form writes to Firebase Cloud Firestore.
 
+The site uses the artist image from the linked Spotify profile for its logo.
+The Music section includes TullyG's debut album, *Journey To Identity*, and
+its 12-track outline.
+
 ## Set up Firebase
 
 1. Create a Firebase project and register a web app.
@@ -17,12 +21,13 @@ optional message form writes to Firebase Cloud Firestore.
    `appCheckSiteKey` in `firebase-config.js`, and verify submissions work
    before enabling App Check enforcement for Cloud Firestore.
 
-Until the Firebase config is filled in and Firestore is set up, the rest of the
-site works normally and the message form stays unavailable.
+The Firebase web app config is included. The message form is enabled when the
+site can connect to Firebase; Firestore must be created and the included rules
+deployed for message submissions to be stored.
 
 ## Publish
 
 The GitHub Actions workflow deploys the repository root to GitHub Pages whenever
 there is a push to `main`. Enable GitHub Pages for the repository with **GitHub
 Actions** as its source; the first deployment then publishes the site at
-`https://carzzyapps.github.io/TullyG/`.
+`https://www.carzzyapps.com/TullyG/`.

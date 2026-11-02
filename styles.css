@@ -45,6 +45,27 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-brand .brand-avatar {
+  width: 36px;
+  height: 36px;
+}
+
 .wordmark {
   color: var(--ink);
   font-size: 1.15rem;
@@ -155,60 +176,14 @@ h1 {
   place-items: center;
 }
 
-.record-art {
-  position: absolute;
-  display: flex;
+.hero-portrait {
+  display: block;
   width: min(77%, 345px);
-  aspect-ratio: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  padding: clamp(24px, 4vw, 46px);
+  height: min(77vw, 345px);
   border: 1px solid #37383b;
-  background:
-    radial-gradient(ellipse at 74% 77%, #362e30 0, transparent 37%),
-    linear-gradient(145deg, #242528, #18191c 62%, #202023);
+  border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 22px 65px #0000004a;
-}
-
-.record-monogram {
-  color: #e5e1dc;
-  font-family: var(--serif);
-  font-size: clamp(4.5rem, 11vw, 8rem);
-  letter-spacing: -0.1em;
-  line-height: 1;
-}
-
-.record-wave {
-  display: flex;
-  height: 55px;
-  align-items: center;
-  gap: 5px;
-}
-
-.record-wave i {
-  width: 3px;
-  height: 26%;
-  border-radius: 2px;
-  background: var(--accent);
-}
-
-.record-wave i:nth-child(3n) {
-  height: 68%;
-}
-
-.record-wave i:nth-child(4n) {
-  height: 100%;
-}
-
-.record-wave i:nth-child(5n) {
-  height: 47%;
-}
-
-.record-caption {
-  color: var(--muted);
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
 }
 
 .section-rule {
@@ -308,6 +283,85 @@ h2 {
 
 .platform-links a:hover {
   color: var(--accent);
+}
+
+.album-feature {
+  margin-top: 37px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.album-label {
+  margin-bottom: 12px;
+}
+
+.album-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.album-heading h3 {
+  margin: 0 0 9px;
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.album-description {
+  max-width: 430px;
+  margin-bottom: 19px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  line-height: 1.7;
+}
+
+.album-link {
+  margin-top: 1px;
+}
+
+.album-tracklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  counter-reset: album-track;
+  list-style: none;
+}
+
+.album-tracklist li {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 3px 8px;
+  align-content: start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  counter-increment: album-track;
+}
+
+.album-tracklist li::before {
+  grid-row: span 2;
+  color: var(--muted);
+  content: counter(album-track, decimal-leading-zero);
+  font-size: 0.62rem;
+  line-height: 1.6;
+}
+
+.album-tracklist li span:first-child {
+  color: var(--ink);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+.album-tracklist li span:last-child {
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.5;
 }
 
 .about {
@@ -487,8 +541,18 @@ h2 {
     min-height: 295px;
   }
 
-  .record-art {
-    width: min(70%, 280px);
+  .hero-portrait {
+    width: min(70vw, 280px);
+    height: min(70vw, 280px);
+  }
+
+  .album-heading {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .album-link {
+    margin: 0 0 18px;
   }
 
   .section-rule {
